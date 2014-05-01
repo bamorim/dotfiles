@@ -11,3 +11,15 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 filetype plugin indent on
 map <C-t> :NERDTreeToggle<CR>
+
+autocmd FileType ruby nmap <buffer> <F4> <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <F4> <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <F4> <Plug>(xmpfilter-run)
+
+autocmd FileType ruby nmap <buffer> <F3> <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <F3> <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <F3> <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <F5> <esc>:%s/ # [\!\=\~]>.*//g<CR>:g/^# >>.*/d<CR>
+autocmd FileType ruby xmap <buffer> <F5> <esc>:%s/ # [\!\=\~]>.*//g<CR>:g/^# >>.*/d<CR>
+autocmd FileType ruby imap <buffer> <F5> <esc>:%s/ # [\!\=\~]>.*//g<CR>:g/^# >>.*/d<CR>
