@@ -1,0 +1,9 @@
+config/initializers/quiet_assets.rb
+.envrc
+.sublime-*
+.floo
+.flooignore
+.ruby-gemset
+**/*.swp
+.idea/*
+.idea/

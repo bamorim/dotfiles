@@ -1,0 +1,8 @@
+[core]
+	excludesfile = /home/bamorim/.gitignore_global
+	autocrlf = input
+[user]
+	email = contato@bamorim.com
+	name = Bernardo Amorim
+[push]
+	default = simple
