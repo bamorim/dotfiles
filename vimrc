@@ -26,3 +26,5 @@ autocmd FileType ruby imap <buffer> <F5> <esc>:%s/ # [\!\=\~]>.*//g<CR>:g/^# >>.
 
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
+
+let g:ctrlp_custom_ignore = 'node_modules\|git\|bower_components'
