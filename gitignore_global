@@ -7,3 +7,4 @@ config/initializers/quiet_assets.rb
 **/*.swp
 .idea/*
 .idea/
+.elasticbeanstalk/config
