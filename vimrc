@@ -25,7 +25,9 @@ set foldnestmax=10
 set foldmethod=indent
 
 " Plugins
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 execute pathogen#infect()
+
 autocmd VimEnter * if argc() == 0 | NERDTree | endif
 
 " Keybindings
