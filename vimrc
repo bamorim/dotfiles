@@ -48,6 +48,7 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 
 " Nerdtree
+map <C-t> :NERDTreeToggle<CR>
 map <leader>t :NERDTreeToggle<CR>
 
 " xmpfilter
