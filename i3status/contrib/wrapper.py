@@ -30,9 +30,13 @@ import dbus
 
 def get_clementine():
   session_bus = dbus.SessionBus()
+  if not session_bus.name_has_owner('org.mpris.clementine'):
+    return None
   player = session_bus.get_object('org.mpris.clementine', '/Player')
   iface = dbus.Interface(player, dbus_interface='org.freedesktop.MediaPlayer')
   metadata = iface.GetMetadata()
+  if metadata.get("title") == None:
+    return None
   status = metadata["title"]+' - '+metadata["album"]
   return status
 
@@ -70,6 +74,8 @@ if __name__ == '__main__':
     j = json.loads(line)
     # insert information into the start of the json, but could be anywhere
     # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-    j.insert(0, {'full_text' : '%s' % get_clementine(), 'name' : 'clementine'})
+    music = get_clementine()
+    if music != None:
+      j.insert(0, {'full_text' : '%s' % get_clementine(), 'name' : 'clementine'})
     # and echo back new encoded json
     print_line(prefix+json.dumps(j))
