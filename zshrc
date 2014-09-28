@@ -43,6 +43,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git z rails zeus)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.passwords.sh
 
 # I should install direnv
 # eval "$(direnv hook $0)"

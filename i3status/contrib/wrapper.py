@@ -27,6 +27,26 @@
 import sys
 import json
 import dbus
+from os import popen
+
+def get_cmus_key_val(line):
+  parts = line.split(" ")
+  if(parts[0] == "tag" or parts[0] == "set"):
+    return (parts[1], " ".join(parts[2:]))
+  return (parts[0], " ".join(parts[1:]))
+
+def get_cmus():
+  tags = dict(map(get_cmus_key_val, popen("cmus-remote -C status").read().split("\n")))
+  data = []
+  data.append(tags.get("artist"))
+  data.append(tags.get("title"))
+  data = filter(lambda x: x != None, data)
+
+  if(len(data) == 0):
+    return None
+
+  return " - ".join(data)
+
 
 def get_clementine():
   session_bus = dbus.SessionBus()
@@ -35,10 +55,10 @@ def get_clementine():
   player = session_bus.get_object('org.mpris.clementine', '/Player')
   iface = dbus.Interface(player, dbus_interface='org.freedesktop.MediaPlayer')
   metadata = iface.GetMetadata()
-  if metadata.get("title") == None:
+  data = filter(lambda x: x != None, [metadata.get("title"), metadata.get("album")])
+  if len(data) == 0:
     return None
-  status = metadata["title"]+' - '+metadata["album"]
-  return status
+  return str.join(" - ", data)
 
 def print_line(message):
   """ Non-buffered printing to stdout. """
@@ -74,8 +94,10 @@ if __name__ == '__main__':
     j = json.loads(line)
     # insert information into the start of the json, but could be anywhere
     # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-    music = get_clementine()
-    if music != None:
-      j.insert(0, {'full_text' : '%s' % get_clementine(), 'name' : 'clementine'})
+    programs = [get_clementine, get_cmus]
+    for program in programs:
+      result = program()
+      if result != None:
+        j.insert(0, { 'full_text' : '%s' % result, 'name' : program.__name__.replace("get_","") })
     # and echo back new encoded json
     print_line(prefix+json.dumps(j))
