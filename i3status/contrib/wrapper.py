@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 # This script is a simple wrapper which prefixes each i3status line with custom
@@ -27,7 +27,16 @@
 import sys
 import json
 import dbus
+import re
 from os import popen
+
+def get_volume():
+  rx = re.compile('Playback.*\[(\d+)\%\] \[([\d\-\.]+)dB\] \[(.*)\]')
+  match = rx.search(popen("amixer sget 'Master'").read())
+  if match:
+    return "V: "+match.group(1)
+  return None
+  
 
 def get_cmus_key_val(line):
   parts = line.split(" ")
@@ -94,7 +103,7 @@ if __name__ == '__main__':
     j = json.loads(line)
     # insert information into the start of the json, but could be anywhere
     # CHANGE THIS LINE TO INSERT SOMETHING ELSE
-    programs = [get_clementine, get_cmus]
+    programs = [get_volume]
     for program in programs:
       result = program()
       if result != None:
