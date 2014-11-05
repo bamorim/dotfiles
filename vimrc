@@ -28,7 +28,18 @@ set foldmethod=indent
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 execute pathogen#infect()
 
-autocmd VimEnter * if argc() == 0 | NERDTree | endif
+function! StartUpNerdTree()
+  if argc() == 1 && isdirectory(argv(0))
+    bd
+    exec "cd" argv(0)
+    NERDTree
+  endif
+  if argc() == 0
+    NERDTree
+  endif
+endfunction
+
+autocmd VimEnter * call StartUpNerdTree()
 
 " Keybindings
 nnoremap <space> za
