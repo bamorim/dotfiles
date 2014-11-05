@@ -43,17 +43,3 @@ ZSH_THEME="robbyrussell"
 plugins=(git z rails zeus)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.passwords.sh
-
-# I should install direnv
-# eval "$(direnv hook $0)"
-
-# Customize to your needs...
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/home/bamorim/bin
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-eval "$(direnv hook zsh)"
