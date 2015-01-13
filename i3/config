@@ -144,9 +144,9 @@ bindsym Print exec "scrot '%Y-%m-%d-%Hh%Mm%Ss.png' -e 'mkdir -p ~/images/shots/%
 bindsym --release Shift+Print exec "scrot '%Y-%m-%d-%Hh%Mm%Ss.png' -s -e 'mkdir -p ~/images/shots/%Y-%m; mv $f ~/images/shots/%Y-%m'"
 
 # Lock
-bindsym $mod+l exec "~/bin/i3exit lock"
-bindsym $mod+Shift+s exec "~/bin/i3exit suspend"
-bindsym $mod+Shift+h exec "~/bin/i3exit hibernate"
+bindsym $mod+l exec "i3exit lock"
+bindsym $mod+Shift+s exec "i3exit suspend"
+bindsym $mod+Shift+h exec "i3exit hibernate"
 
 bindsym XF86MonBrightnessUp exec "xbacklight +10"
 bindsym XF86MonBrightnessDown exec "xbacklight -10"
@@ -154,3 +154,5 @@ bindsym XF86MonBrightnessDown exec "xbacklight -10"
 bindsym XF86AudioRaiseVolume exec "amixer sset 'Master' 1dB+"
 bindsym XF86AudioLowerVolume exec "amixer sset 'Master' 1dB-"
 bindsym XF86AudioMute exec "amixer sset 'Master' toggle"
+
+focus_follows_mouse no
