@@ -648,3 +648,6 @@ call s:HL('VimBracket', 'dress', '', 'none')
 
 " }}}
 
+" My modifications
+hi Normal ctermbg=none
+hi NonText ctermbg=none
