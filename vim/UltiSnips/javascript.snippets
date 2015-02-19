@@ -1,0 +1,30 @@
+global !p
+import re
+
+def camelCase(input):
+	parts = re.findall(r"[^-_]+",input)
+	if len(parts) == 0:
+		return ""
+	camelParts = parts[0:1]+map(lambda s: s.title(), parts[1:])
+	return str.join("",camelParts)
+
+def nameForRequire(path):
+	return camelCase(path.split("/")[-1].split(".")[0])
+
+endglobal
+
+snippet creq "CommonJS require" b
+var ${2:`!p
+snip.rv = nameForRequire(t[1])
+`} = require('${1:libname}');
+endsnippet
+
+snippet cexp "CommonJS export" b
+module.exports = ${1:{}}
+endsnippet
+
+snippet gtask "Gulp Task" b
+gulp.task('${1:taskname}', function(callback){
+	${2:${VISUAL}}
+});
+endsnippet

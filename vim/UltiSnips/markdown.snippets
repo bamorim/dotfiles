@@ -1,0 +1,19 @@
+global !p
+from licences import apache, mit, mklicense
+endglobal
+
+snippet apache "Adds Apache License" b
+## License
+
+This software is licensed under the Apache 2 license, quoted below.
+
+		Copyright (c) ${1:<year>} ${2:<copyright holders>}
+`!p mklicense(snip,apache,2)`
+endsnippet
+
+snippet mit "Adds MIT License" b
+## License
+
+		Copyright (c) ${1:<year>} ${2:<copyright holders>}
+`!p mklicense(snip,mit,2)`
+endsnippet
