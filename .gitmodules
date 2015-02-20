@@ -52,3 +52,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/bundle/apiblueprint.vim"]
+	path = vim/bundle/apiblueprint.vim
+	url = https://github.com/kylef/apiblueprint.vim.git
