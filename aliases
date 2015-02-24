@@ -1,1 +1,10 @@
 gi() { curl "https://www.gitignore.io/api/$@"; }
+
+lsr() {
+  ls -aR $1 | awk '
+  /:$/&&f{s=$0;f=0}
+  /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
+  NF&&f{ print s"/"$0 }'
+}
+
+rmswp(){ for f in $(lsr | grep swp); do; echo "Removing $f"; rm -i $1 $f; done }
