@@ -55,3 +55,6 @@
 [submodule "vim/bundle/apiblueprint.vim"]
 	path = vim/bundle/apiblueprint.vim
 	url = https://github.com/kylef/apiblueprint.vim.git
+[submodule "vim/bundle/happy.vim"]
+	path = vim/bundle/happy.vim
+	url = https://github.com/vim-scripts/happy.vim.git
