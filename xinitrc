@@ -3,6 +3,7 @@ export SSH_AUTH_SOCK
 
 xrdb -merge ~/.Xresources
 sh ~/.fehbg &
+dbus-launch thunar --daemon &
 dunst &
 nm-applet &
 start-pulseaudio-x11 &
