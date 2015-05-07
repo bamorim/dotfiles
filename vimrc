@@ -25,8 +25,6 @@ set foldnestmax=10
 set foldmethod=indent
 
 " Plugins
-let g:ycm_key_list_select_completion = []
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 execute pathogen#infect()
 
 function! StartUpNerdTree()
