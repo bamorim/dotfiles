@@ -151,8 +151,8 @@ bindsym $mod+Shift+h exec "i3exit hibernate"
 bindsym XF86MonBrightnessUp exec "xbacklight +10"
 bindsym XF86MonBrightnessDown exec "xbacklight -10"
 
-bindsym XF86AudioRaiseVolume exec "amixer sset 'Master' 1dB+"
-bindsym XF86AudioLowerVolume exec "amixer sset 'Master' 1dB-"
-bindsym XF86AudioMute exec "amixer sset 'Master' toggle"
+bindsym XF86AudioRaiseVolume exec "pulseaudio-ctl up"
+bindsym XF86AudioLowerVolume exec "pulseaudio-ctl down"
+bindsym XF86AudioMute exec "pulseaudio-ctl mute"
 
 focus_follows_mouse no
