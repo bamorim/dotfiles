@@ -8,3 +8,6 @@ lsr() {
 }
 
 rmswp(){ for f in $(lsr | grep swp); do; echo "Removing $f"; rm -i $1 $f; done }
+
+sv(){sh -c $1 > /var/transfer}
+re(){cat /var/transfer}
