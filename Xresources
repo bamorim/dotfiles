@@ -1,3 +1,6 @@
+! Rofi config
+rofi.terminal: urxvt
+
 ! better font rendering
 Xft.autohint: true
 Xft*antialias: true
