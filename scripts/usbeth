@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sudo ip link set $1 up
-sudo killall -9 dhcpcd
-sudo dhcpcd $1
