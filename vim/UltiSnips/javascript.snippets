@@ -28,3 +28,29 @@ gulp.task('${1:taskname}', function(callback){
 	${2:${VISUAL}}
 });
 endsnippet
+
+snippet reactcomp "React Component With ES6 and JSX" b
+import React from "react";
+
+class ${1:MyComponent} extends React.Component {
+	render(){
+		${2:return <div/>;}
+	}
+}
+
+export default $1;
+endsnippet
+
+snippet import "ES6 import" b
+import ${2:`!p
+snip.rv = nameForRequire(t[1])
+`} from "${1:libname}";
+endsnippet
+
+snippet class "Extended Class With Export" b
+class ${1:MyClass}${2: extends ${3:SuperClass}} {
+	${4://Class body}
+}
+
+export default $1;
+endsnippet
