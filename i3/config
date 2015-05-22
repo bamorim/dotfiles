@@ -31,6 +31,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec google-chrome-stable --show-app-list
 bindsym $mod+Tab exec rofi -show window
 bindsym $mod+c exec rofi -show ssh
 bindsym $mod+t exec dmenu_urxvt
@@ -158,3 +159,5 @@ bindsym XF86AudioLowerVolume exec "pulseaudio-ctl down"
 bindsym XF86AudioMute exec "pulseaudio-ctl mute"
 
 focus_follows_mouse no
+
+for_window [instance="chrome_app_list"] floating enable
