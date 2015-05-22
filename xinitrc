@@ -4,6 +4,7 @@ export SSH_AUTH_SOCK
 xrdb -merge ~/.Xresources
 sh ~/.fehbg &
 dbus-launch thunar --daemon &
+nohup battery.sh > /dev/null 2&>1 &
 dunst &
 nm-applet &
 start-pulseaudio-x11 &
