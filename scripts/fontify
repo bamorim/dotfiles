@@ -2,7 +2,6 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 FILENAME=${1%.*}
-echo $FILENAME
 fontforge -script $DIR/fontify-forge.pe $1
 sfnt2woff $FILENAME.otf
 ttf2eot $FILENAME.ttf > $FILENAME.eot
