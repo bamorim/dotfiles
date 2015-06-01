@@ -1,0 +1,24 @@
+#!/bin/sh
+
+MAIN_MONITOR=eDP1
+CINEMA_MONITOR=HDMI1
+
+case $1 in
+  on)
+    echo "Turning on cinema mode..."
+    xrandr --output $CINEMA_MONITOR --auto --right-of $MAIN_MONITOR
+    xset s -dpms
+    xset s noblank
+    xset s off
+    ;;
+  off)
+    echo "Turning off cinema mode..."
+    xrandr --output $CINEMA_MONITOR --off
+    xset s +dpms
+    xset s blank
+    xset s on
+    ;;
+  *)
+    echo "Usage: $(basename "$0") on|off"
+    ;;
+esac
