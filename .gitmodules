@@ -1,63 +1,63 @@
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
+[submodule "home/vim/bundle/ctrlp.vim"]
+	path = home/vim/bundle/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+[submodule "home/vim/bundle/nerdtree"]
+	path = home/vim/bundle/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-rails"]
-	path = vim/bundle/vim-rails
+[submodule "home/vim/bundle/vim-rails"]
+	path = home/vim/bundle/vim-rails
 	url = git@github.com:tpope/vim-rails.git
-[submodule "vim/bundle/vim-bundler"]
-	path = vim/bundle/vim-bundler
+[submodule "home/vim/bundle/vim-bundler"]
+	path = home/vim/bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
-[submodule "vim/bundle/vim-jsx"]
-	path = vim/bundle/vim-jsx
+[submodule "home/vim/bundle/vim-jsx"]
+	path = home/vim/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
+[submodule "home/vim/bundle/vim-less"]
+	path = home/vim/bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
+[submodule "home/vim/bundle/vim-markdown"]
+	path = home/vim/bundle/vim-markdown
 	url = git@github.com:plasticboy/vim-markdown.git
-[submodule "vim/bundle/vim-javascript"]
-  path = vim/bundle/vim-javascript
+[submodule "home/vim/bundle/vim-javascript"]
+  path = home/vim/bundle/vim-javascript
   url = git@github.com:pangloss/vim-javascript.git
-[submodule "vim/bundle/vim-ruby-xmpfilter"]
-	path = vim/bundle/vim-ruby-xmpfilter
+[submodule "home/vim/bundle/vim-ruby-xmpfilter"]
+	path = home/vim/bundle/vim-ruby-xmpfilter
 	url = git@github.com:t9md/vim-ruby-xmpfilter.git
-[submodule "vim/bundle/vim-handlebars"]
-	path = vim/bundle/vim-handlebars
+[submodule "home/vim/bundle/vim-handlebars"]
+	path = home/vim/bundle/vim-handlebars
 	url = git@github.com:nono/vim-handlebars.git
-[submodule "vim/bundle/tern_for_vim"]
-	path = vim/bundle/tern_for_vim
+[submodule "home/vim/bundle/tern_for_vim"]
+	path = home/vim/bundle/tern_for_vim
 	url = git@github.com:marijnh/tern_for_vim.git
-[submodule "vim/bundle/vim-coffee-script"]
-	path = vim/bundle/vim-coffee-script
+[submodule "home/vim/bundle/vim-coffee-script"]
+	path = home/vim/bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
+[submodule "home/vim/bundle/tabular"]
+	path = home/vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/vim-scala"]
-	path = vim/bundle/vim-scala
+[submodule "home/vim/bundle/vim-scala"]
+	path = home/vim/bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "vim/bundle/vim-snippets"]
-	path = vim/bundle/vim-snippets
+[submodule "home/vim/bundle/vim-snippets"]
+	path = home/vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
+[submodule "home/vim/bundle/ultisnips"]
+	path = home/vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
-[submodule "vim/bundle/apiblueprint.vim"]
-	path = vim/bundle/apiblueprint.vim
+[submodule "home/vim/bundle/apiblueprint.vim"]
+	path = home/vim/bundle/apiblueprint.vim
 	url = https://github.com/kylef/apiblueprint.vim.git
-[submodule "vim/bundle/happy.vim"]
-	path = vim/bundle/happy.vim
+[submodule "home/vim/bundle/happy.vim"]
+	path = home/vim/bundle/happy.vim
 	url = https://github.com/vim-scripts/happy.vim.git
-[submodule "vim/bundle/vim-elixir"]
-	path = vim/bundle/vim-elixir
+[submodule "home/vim/bundle/vim-elixir"]
+	path = home/vim/bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+[submodule "home/vim/bundle/vim-airline"]
+	path = home/vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "vim/bundle/rust.vim"]
-	path = vim/bundle/rust.vim
+[submodule "home/vim/bundle/rust.vim"]
+	path = home/vim/bundle/rust.vim
 	url = git@github.com:rust-lang/rust.vim.git
