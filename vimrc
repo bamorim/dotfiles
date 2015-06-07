@@ -2,6 +2,9 @@ if $TERM == "xterm-256color" || $TERM == "xterm"
   set t_Co=256
 endif
 
+set shell=zsh
+
+let g:rust_recommended_style=0
 " Identation
 set cindent 
 set tabstop=2
@@ -59,7 +62,6 @@ map <leader>k <C-w>k
 
 " Nerdtree
 map <C-t> :NERDTreeToggle<CR>
-map <leader>t :NERDTreeToggle<CR>
 
 " xmpfilter
 autocmd FileType ruby nmap <buffer> <F4> <Plug>(xmpfilter-run)
