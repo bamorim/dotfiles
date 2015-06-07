@@ -15,12 +15,20 @@ done
 
 # Link home scripts (i.e. ~/.vimrc)
 
-# Infer HOMESCRIPTS from this script path
-HOMESCRIPTS=$BASEPATH/home
-for f in $HOMESCRIPTS/*; do
+# Infer HOMEDOTFILES from this script path
+HOMEDOTFILES=$BASEPATH/home
+for f in $HOMEDOTFILES/*; do
   NAME=$(basename $f)
   echo "Linking home/$NAME to $HOME/.$NAME"
   ln -sfT $iarg $f $HOME/.$NAME
+done
+
+# Link config to ./config
+CONFIGPATH=$BASEPATH/config
+for f in $CONFIGPATH/*; do
+  NAME=$(basename $f)
+  echo "Linking config/$NAME to $HOME/.config/$NAME"
+  ln -sfT $iarg $f $HOME/.config/$NAME
 done
 
 # Link scripts to ~/bin/scripts
