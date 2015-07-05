@@ -5,7 +5,8 @@ BATPATH=/sys/class/power_supply/$BAT
 
 notify-send -t 30 -i battery-caution -u low "Battery Monitoring on $BAT is up"
 
-LAST=100
+# Start with zero to avoid suspending right on turning on when battery is under 3%
+LAST=0
 while true
 do
   CAPACITY=`cat $BATPATH/capacity`
@@ -27,6 +28,7 @@ do
       systemctl suspend
     fi
   fi
+
   LAST=$CAPACITY
   sleep 5
 done
