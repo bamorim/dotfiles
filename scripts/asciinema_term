@@ -1,0 +1,2 @@
+#!/bin/sh
+urxvt -name asciinema -geometry 100x30 -e zsh -c 'asciinema rec; read \?"I am waiting for you to press [Enter] before I continue."' 
