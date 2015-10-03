@@ -61,3 +61,6 @@
 [submodule "home/vim/bundle/rust.vim"]
 	path = home/vim/bundle/rust.vim
 	url = git@github.com:rust-lang/rust.vim.git
+[submodule "home/vim/bundle/elm-vim"]
+	path = home/vim/bundle/elm-vim
+	url = https://github.com/elmcast/elm-vim.git
