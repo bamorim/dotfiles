@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/bamorim/Dropbox/markdown-cv'
-let g:netrw_dirhist_2='/home/bamorim/Dropbox/markdown-cv/templates'
-let g:netrw_dirhist_3='/home/bamorim/Dropbox/001_Projects/Bamorim/bamorim.github.io/_layouts'

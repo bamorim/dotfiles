@@ -3,6 +3,9 @@ source $HOME/.passwords.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/home/bamorim/bin:/home/bamorim/bin/scripts:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export ELM_HOME=/usr/lib/node_modules/elm/share
+
+eval $(keychain --eval --quiet)
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
