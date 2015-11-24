@@ -16,6 +16,9 @@ set shiftwidth=2
 set expandtab
 filetype plugin indent on
 
+" Filetypes
+au BufRead,BufNewFile *.tag setfiletype html
+
 " Colors
 colorscheme badwolf
 syntax enable

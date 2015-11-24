@@ -5,8 +5,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export ELM_HOME=/usr/lib/node_modules/elm/share
 
+eval "$(direnv hook zsh)"
 eval $(keychain --eval --quiet)
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
-eval "$(direnv hook zsh)"
