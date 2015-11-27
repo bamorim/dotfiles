@@ -4,6 +4,7 @@ HOME=/home/bamorim
 THIS=$(readlink -f "$0")
 BASEPATH=$(dirname "$THIS")
 
+# -i makes the ln to be interactive, asking on replacing a link.
 iarg="-i"
 
 while getopts f o
