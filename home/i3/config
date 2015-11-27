@@ -52,6 +52,7 @@ bindsym $mod+Shift+d exec google-chrome-stable --show-app-list
 bindsym $mod+Tab exec rofi -show window
 bindsym $mod+c exec rofi -show ssh
 bindsym $mod+t exec dmenu_urxvt
+bindsym $mod+n exec nmcli_dmenu
 
 # Navigation
 bindsym $mod+Left focus left
