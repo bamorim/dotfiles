@@ -61,3 +61,9 @@
 [submodule "home/vim/bundle/elm-vim"]
 	path = home/vim/bundle/elm-vim
 	url = https://github.com/elmcast/elm-vim.git
+[submodule "home/vim/bundle/vim-latex-live-preview"]
+	path = home/vim/bundle/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule "home/vim/bundle/nim.vim"]
+	path = home/vim/bundle/nim.vim
+	url = git://github.com/zah/nim.vim.git

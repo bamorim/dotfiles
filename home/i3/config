@@ -26,7 +26,7 @@ bar {
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Printscreen
-bindsym Print exec "scrot '%Y-%m-%d-%Hh%Mm%Ss.png' -e 'mkdir -p ~/images/shots/%Y-%m; mv $f ~/images/shots/%Y-%m'"
+bindsym --release Print exec "scrot '%Y-%m-%d-%Hh%Mm%Ss.png' -e 'mkdir -p ~/images/shots/%Y-%m; mv $f ~/images/shots/%Y-%m'"
 bindsym --release Shift+Print exec "scrot '%Y-%m-%d-%Hh%Mm%Ss.png' -s -e 'mkdir -p ~/images/shots/%Y-%m; mv $f ~/images/shots/%Y-%m'"
 
 # Lock
@@ -154,3 +154,5 @@ bindsym $mod+r mode "resize"
 for_window [instance="chrome_app_list"] floating enable
 for_window [instance="^asciinema$" class="^URxvt$"] floating enable
 for_window [class="^Gpick$"] floating enable
+for_window [class="Thunderbird" window_role="EventDialog"] floating enable
+for_window [class="Thunderbird" window_role="Msgcompose"] floating enable
