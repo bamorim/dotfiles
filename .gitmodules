@@ -67,3 +67,6 @@
 [submodule "home/vim/bundle/nim.vim"]
 	path = home/vim/bundle/nim.vim
 	url = git://github.com/zah/nim.vim.git
+[submodule "home/vim/bundle/vim-raml"]
+	path = home/vim/bundle/vim-raml
+	url = https://github.com/IN3D/vim-raml.git
