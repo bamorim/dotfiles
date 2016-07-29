@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+xmodmap -e "keycode 25 = Up NoSymbol Up"
+xmodmap -e "keycode 38 = Left NoSymbol Left"
+xmodmap -e "keycode 39 = Down NoSymbol Down"
+xmodmap -e "keycode 40 = Right NoSymbol Right"
+
+xmodmap -e "keycode 111 = w W w W aring Aring aring"
+xmodmap -e "keycode 113 = a A a A aacute Aacute aacute"
+xmodmap -e "keycode 116 = s S s S ssharp section ssharp"
+xmodmap -e "keycode 114 = d D d D eth ETH eth"
