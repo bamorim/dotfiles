@@ -1,8 +1,8 @@
 xrdb -merge ~/.Xresources &
 sh ~/.fehbg &
 dbus-launch thunar --daemon &
-dunst &
 nm-applet &
+dropbox &
 setxkbmap br -variant abnt2 &
 start-pulseaudio-x11 &
 exec i3

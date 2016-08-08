@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+  echo "Usage:"
+  echo "$(basename $0) FILENAME"
+  exit 1
+fi
+
+TMP=$(mktemp -d)
+pdflatex --interaction=batchmode --output-directory=$TMP $@
+pdflatex --interaction=batchmode --output-directory=$TMP $@
+pdflatex --interaction=batchmode --output-directory=$TMP $@
+mv $TMP/*.pdf ./
