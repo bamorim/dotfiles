@@ -1,8 +1,5 @@
-[ ! -s ~/.config/mpd/pid ] && mpd
-
 xrdb -merge ~/.Xresources &
 sh ~/.fehbg &
-nohup battery.sh > /dev/null 2&>1 &
 dunst &
 nm-applet &
 dropbox &
