@@ -1,10 +1,8 @@
-[ ! -s ~/.config/mpd/pid ] && mpd
-
 xrdb -merge ~/.Xresources &
 sh ~/.fehbg &
 dbus-launch thunar --daemon &
-nohup battery.sh > /dev/null 2&>1 &
 dunst &
 nm-applet &
+setxkbmap br -variant abnt2 &
 start-pulseaudio-x11 &
 exec i3
