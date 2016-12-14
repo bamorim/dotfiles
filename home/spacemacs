@@ -25,12 +25,19 @@ values."
      ;; version-control
 
      ;; Languages
+     ;;yaml
      html
      c-c++
-     php
      dockerfile
      elixir
-     elm
+     (elm :variables
+          elm-format-on-save t)
+     (ruby :variables
+           ruby-version-manager 'chruby)
+     haskell
+     react
+     crystal
+     latex
      )
    dotspacemacs-additional-packages '()
    dotspacemacs-excluded-packages '()
@@ -99,7 +106,7 @@ values."
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    dotspacemacs-default-package-repository nil
    dotspacemacs-whitespace-cleanup nil
-  ))
+   ))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -110,7 +117,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default
    evil-shift-round nil
-  ))
+   ))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -132,11 +139,27 @@ you should place your code here."
    web-mode-attr-indent-offset 2
    ;; elm-mode
    elm-indent-offset 2
-  )
+   ;; latex-mode
+   preview-scale-function 1.7
+   )
   (setq
    browse-url-browser-function 'browse-url-generic
    browse-url-generic-program "google-chrome-stable"
-  ))
+   ))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (auctex-latexmk auctex image-dired+ xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe restart-emacs rbenv ranger rainbow-delimiters quelpa popwin persp-mode paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav dockerfile-mode disaster define-word crystal-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
