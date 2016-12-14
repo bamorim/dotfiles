@@ -1,0 +1,17 @@
+#!/bin/sh
+
+palette="/tmp/pallete.png"
+filters="fps=24,scale=-1:256:flags=lanczos"
+starttime=0
+endtime="00:00:01.72"
+
+palettegen="palettegen=stats_mode=full"
+paletteuse="paletteuse=dither=bayer:bayer_scale=3"
+
+logfile="./script.log"
+
+touch $logfile
+echo "Starting conversion..." >> $logfile
+
+ffmpeg -v warning -ss $starttime -t $endtime -i $1 -vf "$filters,$palettegen" -y $palette 2>> $logfile
+ffmpeg -v warning -ss $starttime -t $endtime -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] $paletteuse" -f gif -y $2 2>> $logfile

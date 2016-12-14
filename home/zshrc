@@ -1,5 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
+DEFAULT_USER=`whoami`
+#ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git z rails zeus)
 

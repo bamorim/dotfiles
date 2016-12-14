@@ -5,7 +5,6 @@
 set $mod Mod4
 
 font pango:DejaVu Sans Mono 9
-#client.focused     #77994B #547628 #EEEEEE
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -15,8 +14,31 @@ focus_follows_mouse no
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command $HOME/bin/scripts/conky-i3bar
+        font xft:tamsyn, symbola, siji 12
+        colors {
+          background #171717
+          #class             border  back    text
+          focused_workspace  #afd700 #afd700 #171717
+          active_workspace   #333333 #5f676a #ffffff
+          urgent_workspace   #2f343a #900000 #ffffff
+          inactive_workspace #afd700 #171717 #9c9c9c
+        }
 }
+
+# --------------------------------------- #
+#                  Style                  #
+# --------------------------------------- #
+
+smart_gaps on
+gaps inner 10
+for_window [class="^.*"] border pixel 0
+#class                  border  backgnd text    indicator
+client.focused          #171717 #676767 #a6e22e #676767
+client.focused_inactive #2e3436 #2e3436 #b9c8d1
+client.unfocused        #2e3436 #2e3436 #999999
+client.urgent           #cd989a #cd989a #2e3436
+client.background       #121212
 
 # --------------------------------------- #
 #               Keybindings               #
@@ -24,6 +46,7 @@ bar {
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec "urxvt -name autofloat -geometry 100x5 -bd white +tr"
 
 # Printscreen
 bindsym --release Print exec "scrot '%Y-%m-%d-%Hh%Mm%Ss.png' -e 'mkdir -p ~/images/shots/%Y-%m; mv $f ~/images/shots/%Y-%m'"
@@ -49,10 +72,8 @@ bindsym $mod+Shift+q kill
 # Launchers (rofi and google-chrome app list)
 bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d exec google-chrome-stable --show-app-list
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Shift+Tab exec rofi -show window
 bindsym $mod+c exec rofi -show ssh
-bindsym $mod+t exec dmenu_urxvt
-bindsym $mod+n exec nmcli_dmenu
 
 # Navigation
 bindsym $mod+Left focus left
@@ -153,6 +174,8 @@ bindsym $mod+r mode "resize"
 
 for_window [instance="chrome_app_list"] floating enable
 for_window [instance="^asciinema$" class="^URxvt$"] floating enable
+for_window [instance="^autofloat$" class="^URxvt$"] floating enable
 for_window [class="^Gpick$"] floating enable
 for_window [class="Thunderbird" window_role="EventDialog"] floating enable
 for_window [class="Thunderbird" window_role="Msgcompose"] floating enable
+for_window [class="Gnome-font-viewer"] floating enable

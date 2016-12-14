@@ -1,2 +1,0 @@
-#!/bin/sh
-urxvt -e "$(dmenu_path | rofi -dmenu "$@")"

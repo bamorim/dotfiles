@@ -1,2 +1,0 @@
-#!/usr/bin/sh
-lanza-proxy "rofi -show run"
