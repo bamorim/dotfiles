@@ -15,3 +15,5 @@ re(){cat /var/transfer}
 touchp(){ mkdir -p $(dirname ${1}); touch $1 }
 
 erltest() { erlc $1.erl && erlc -DTEST $1_tests.erl && erl -noshell -pa . -eval "eunit:test($1_tests, [verbose])" -s init stop }
+
+npm-do() { (PATH=$(npm bin):$PATH; eval $@;) }
