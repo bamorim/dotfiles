@@ -1,0 +1,75 @@
+conky.config = {
+--run in console out of X
+	out_to_x = false,
+	own_window = false,
+	out_to_console = true,
+	background = false,
+	max_text_width = 0,
+
+--behaviour
+	update_interval = 1.0,
+
+-- number of cpu samples to average
+-- set to 1 to disable averaging
+	cpu_avg_samples = 2,
+
+-- Add spaces to keep things from moving about?  This only affects certain objects.
+-- use_spacer should have an argument of left, right, or none
+	use_spacer = 'left',
+
+-- Force UTF8? note that UTF8 support required XFT
+	override_utf8_locale = true,
+
+--font
+	use_xft = true,
+	font = 'tamsyn:size=8',
+
+};
+
+-- JSON for i3bar
+-- Stuff after 'TEXT' will be formatted on screen
+
+conky.text = [[
+  ## CPU Info
+  [{ "full_text" : ":${cpu}% " , "color" : "\#e33a6e" },
+
+  ## RAM Info
+  { "full_text" : ":${mem} " , "color" : "\#e0da37" },
+
+  ## Disk Space
+  { "full_text" : ": ${fs_used /} - [${fs_bar}]" , "color" : "\#80d9d8"},
+
+
+  ## Battery Percentage
+  { "full_text":": ${battery_percent BAT1}%", "color" : "\#DC322F" },
+
+  ## Datetime
+  { "full_text" : "🕑 ${time %d/%m/%Y %H:%M:%S}" , "color" : "\#95fc7b"}
+],
+# ◀ ▶ ✜ ⚅ ⌚ ↑ ≈ ≣ ⏸ ¦¦ Ξ ◈ ◉ ◇ ◆ ◩ ◰ ◱ ◳ ♥ ❤ 💓 ☂
+# Colors from NorthAntrim
+# lightpink --F26C91
+# lightpurple --C89BDC
+# lightgold --C8C039
+# darkpurple --6f3bff
+# brightred --ff0000
+# bright cyan --00fff2
+# dark cyan --00A9B5
+# light yellow --AFB500
+# light green --33CC99
+# light red --dc322f
+# bright green --2fdc57
+
+# lightpurple C89BDC
+# skyblue A4DDED
+# cyan 5DBC9C 66B298
+# lightred B94653
+# mustard A0881E
+# purple 8F5CAB
+# lightblue 5C83DE
+
+# Gandalf
+# orange D2820B FD9D0D
+# brightpurple F70FF
+# brightcyan 00C758
+]];

@@ -3,8 +3,8 @@ PATH=/usr/local/bin:/usr/bin:/bin:/home/bamorim/bin:/home/bamorim/bin/scripts:$P
 PATH="/usr/local/heroku/bin:$PATH"
 export PATH
 
+export GOPATH=~/go
+
 source /usr/share/chruby/chruby.sh
 eval "$(direnv hook zsh)"
 #eval $(keychain --eval --quiet)
-
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
