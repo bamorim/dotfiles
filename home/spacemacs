@@ -9,40 +9,37 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
-     rust
+     c-c++
+     crystal
+     csharp
+     elixir
+     (elm :variables
+          elm-format-command "elm-format-0.18"
+          elm-format-on-save t)
      emacs-lisp
      git
+     go
+     haskell
+     html
+     latex
+     lua
      markdown
      (org :variables
           org-enable-github-support t)
+     plantuml
+     python
      (ranger :variables
+             ranger-show-literal nil
              ranger-show-preview t)
+     react
+     (ruby :variables
+           ruby-version-manager 'chruby)
+     rust
      (shell :variables
             shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
-
-     ;; Languages
-     ;;yaml
-     html
-     c-c++
-     elixir
-     (elm :variables
-          elm-format-on-save t)
-     (ruby :variables
-           ruby-version-manager 'chruby)
-     haskell
-     react
-     crystal
-     latex
-     lua
      yaml
-     go
-     plantuml
-     csharp
      )
    dotspacemacs-additional-packages
    '(
@@ -154,6 +151,8 @@ you should place your code here."
   (setq-default
    ;; js2-mode
    js2-basic-offset 2
+   js2-strict-missing-semi-warning nil
+   js2-missing-semi-one-line-override t
    ;; js-mode
    js-indent-level 2
    ;; web-mode
@@ -172,7 +171,9 @@ you should place your code here."
    org-plantuml-jar-path "/opt/plantuml/plantuml.jar"
    browse-url-browser-function 'browse-url-generic
    browse-url-generic-program "google-chrome-stable"
-   ))
+   )
+  (remove-hook 'anaconda-mode-response-read-fail-hook
+               'anaconda-mode-show-unreadable-response))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -183,7 +184,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (racer cargo toml-mode rust-mode tide typescript-mode omnisharp shut-up auto-complete csharp-mode plantuml-mode spinner winum uuidgen powerline rake pug-mode pcre2el ox-gfm org-projectile org-category-capture alert log4e gntp org-download ob-elixir minitest markdown-mode livid-mode skewer-mode simple-httpd link-hint json-snatcher json-reformat multiple-cursors js2-mode intero hydra hlint-refactor parent-mode hide-comnt projectile helm-hoogle request yasnippet haml-mode go-guru gitignore-mode git-link flycheck-mix flycheck-credo flycheck flx eyebrowse evil-visual-mark-mode evil-unimpaired magit magit-popup git-commit with-editor smartparens iedit evil-ediff anzu evil goto-chg undo-tree highlight eshell-z dumb-jump f diminish company-ghci company-ghc haskell-mode column-enforce-mode inf-ruby bind-map bind-key packed s company dash elixir-mode pkg-info epl helm avy helm-core popup async go-eldoc go-mode yaml-mode writeroom-mode visual-fill-column editorconfig lua-mode auctex-latexmk auctex image-dired+ xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe restart-emacs rbenv ranger rainbow-delimiters quelpa popwin persp-mode paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav dockerfile-mode disaster define-word crystal-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (plantuml-mode omnisharp shut-up auto-complete csharp-mode toml-mode racer cargo rust-mode helm-dash yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode anaconda-mode pythonic reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl rake pug-mode ox-gfm org-projectile alert log4e gntp org-download ob-elixir org minitest markdown-mode livid-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode intero hlint-refactor helm-hoogle yasnippet haml-mode go-guru gitignore-mode git-link flycheck-mix flycheck magit magit-popup git-commit with-editor eshell-z company-ghci company-ghc haskell-mode inf-ruby company elixir-mode go-eldoc go-mode yaml-mode writeroom-mode visual-fill-column editorconfig lua-mode auctex-latexmk auctex image-dired+ xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe restart-emacs rbenv ranger rainbow-delimiters quelpa popwin persp-mode paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav dockerfile-mode disaster define-word crystal-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

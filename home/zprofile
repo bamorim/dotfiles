@@ -1,6 +1,7 @@
 PATH=/home/bamorim/.gem/ruby/2.3.0/bin:$PATH
 PATH=/usr/local/bin:/usr/bin:/bin:/home/bamorim/bin:/home/bamorim/bin/scripts:$PATH
 PATH="/usr/local/heroku/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 export PATH
 
 export GOPATH=~/go
