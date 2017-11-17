@@ -9,25 +9,32 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     syntax-checking
+     auto-completion
      c-c++
      crystal
      csharp
+     docker
      elixir
      (elm :variables
           elm-format-command "elm-format-0.18"
           elm-format-on-save t)
      emacs-lisp
+     erlang
      git
      go
      haskell
      html
      latex
      lua
-     markdown
+     (markdown :variables
+               markdown-live-preview-engine 'vmd)
      (org :variables
           org-enable-github-support t)
      plantuml
+     graphviz
      python
+     osx
      (ranger :variables
              ranger-show-literal nil
              ranger-show-preview t)
@@ -45,6 +52,7 @@ values."
    '(
      editorconfig
      writeroom-mode
+     helm-dash
      )
    dotspacemacs-excluded-packages '()
    dotspacemacs-delete-orphan-packages t))
@@ -129,9 +137,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (require 'ob-ruby)
   (require 'ob-plantuml)
+  (require 'ob-graphviz)
+  (require 'ob-ditaa)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((plantuml . t)
+     (graphviz . t)
+     (ditaa . t)
      (ruby . t)))
 
 
@@ -139,6 +151,32 @@ before packages are loaded. If you are unsure, you should try in setting them in
     (not (member lang '("plantuml"))))
 
   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
+  ;; MMM mode for markdown =D
+  ;; Got from https://jblevins.org/log/mmm
+  (require 'mmm-mode)
+
+  (defun my-mmm-markdown-auto-class (lang &optional submode)
+    "Define a mmm-mode class for LANG in `markdown-mode' using SUBMODE.
+If SUBMODE is not provided, use `LANG-mode' by default."
+    (let ((class (intern (concat "markdown-" lang)))
+          (submode (or submode (intern (concat lang "-mode"))))
+          (front (concat "^::" lang "::$"))
+          (back (concat "^::end-" lang "::$")))
+          ;;(front (concat "^```" lang "[\n\r]+"))
+          ;;(back "^```"))
+      (mmm-add-classes (list (list class :submode submode :front front :back back)))
+      ))
+      ;;(mmm-add-mode-ext-class 'markdown-mode nil class)))
+
+  (mmm-add-classes
+   '((markdown-plantuml
+      :submode plantuml-mode
+      :face mmm-declaration-submode-face
+      :from "^::plantuml::$"
+      :back "^::end-plantuml::$")))
+  (mmm-add-mode-ext-class 'markdown-mode nil 'markdown-plantuml)
+  (my-mmm-markdown-auto-class "dot" "graphviz-dot-mode")
   )
 
 (defun dotspacemacs/user-config ()
@@ -167,13 +205,26 @@ you should place your code here."
    preview-scale-function 1.7
    )
   (setq
-   plantuml-jar-path "/opt/plantuml/plantuml.jar"
-   org-plantuml-jar-path "/opt/plantuml/plantuml.jar"
+   org-ditaa-jar-path "/usr/local/Cellar/ditaa/0.10/libexec/ditaa0_10.jar"
+   plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.14/libexec/plantuml.jar"
+   org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2017.14/libexec/plantuml.jar"
    browse-url-browser-function 'browse-url-generic
    browse-url-generic-program "google-chrome-stable"
    )
-  (remove-hook 'anaconda-mode-response-read-fail-hook
-               'anaconda-mode-show-unreadable-response))
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq python-shell-interpreter "/usr/local/bin/python2")
+              (setq anaconda-mode-server-script
+                    "/usr/local/lib/python2.7/site-packages/anaconda_mode.py")))
+
+  (mmm-add-classes
+   '((markdown-plantuml
+      :submode plantuml-mode
+      :face mmm-declaration-submode-face
+      :from "^::plantuml::$"
+      :back "^::end-plantuml::$")))
+  (mmm-add-mode-ext-class 'markdown-mode nil 'markdown-plantuml)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -184,7 +235,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (plantuml-mode omnisharp shut-up auto-complete csharp-mode toml-mode racer cargo rust-mode helm-dash yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode anaconda-mode pythonic reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl rake pug-mode ox-gfm org-projectile alert log4e gntp org-download ob-elixir org minitest markdown-mode livid-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode intero hlint-refactor helm-hoogle yasnippet haml-mode go-guru gitignore-mode git-link flycheck-mix flycheck magit magit-popup git-commit with-editor eshell-z company-ghci company-ghc haskell-mode inf-ruby company elixir-mode go-eldoc go-mode yaml-mode writeroom-mode visual-fill-column editorconfig lua-mode auctex-latexmk auctex image-dired+ xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe restart-emacs rbenv ranger rainbow-delimiters quelpa popwin persp-mode paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav dockerfile-mode disaster define-word crystal-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (helm-company helm-c-yasnippet flycheck-rust seq flycheck-pos-tip pos-tip flycheck-haskell flycheck-elm erlang company-web web-completion-data company-tern dash-functional company-statistics company-go company-cabal company-c-headers company-auctex company-anaconda auto-yasnippet ac-ispell docker tablist dash docker-tramp async vmd-mode graphviz-dot-mode plantuml-mode omnisharp shut-up auto-complete csharp-mode toml-mode racer cargo rust-mode helm-dash yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode anaconda-mode pythonic reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl rake pug-mode ox-gfm org-projectile alert log4e gntp org-download ob-elixir org minitest markdown-mode livid-mode skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode intero hlint-refactor helm-hoogle yasnippet haml-mode go-guru gitignore-mode git-link flycheck-mix flycheck magit magit-popup git-commit with-editor eshell-z company-ghci company-ghc haskell-mode inf-ruby company elixir-mode go-eldoc go-mode yaml-mode writeroom-mode visual-fill-column editorconfig lua-mode auctex-latexmk auctex image-dired+ xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe restart-emacs rbenv ranger rainbow-delimiters quelpa popwin persp-mode paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help emmet-mode elm-mode elisp-slime-nav dockerfile-mode disaster define-word crystal-mode coffee-mode cmm-mode cmake-mode clean-aindent-mode clang-format chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
