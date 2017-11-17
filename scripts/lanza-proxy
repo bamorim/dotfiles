@@ -1,4 +1,0 @@
-export http_proxy=http://146.164.70.1:3128/
-export https_proxy=$http_proxy
-export no_proxy="localhost,local.bamorim.com,127.0.0.1"
-bash -c "$@"

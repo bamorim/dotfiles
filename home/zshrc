@@ -3,7 +3,14 @@ ZSH_THEME="robbyrussell"
 DEFAULT_USER=`whoami`
 #ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git z rails zeus)
+plugins=(z)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
