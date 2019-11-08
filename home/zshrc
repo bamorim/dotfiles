@@ -1,16 +1,15 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 DEFAULT_USER=`whoami`
-#ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
-plugins=(z)
+plugins=(z dotenv)
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.aliases
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+. $ZSH/oh-my-zsh.sh
+. $HOME/.aliases
+. $HOME/.iterm2_shell_integration.zsh
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+eval $(thefuck --alias)
+source <(plz --completion_script)
+export EDITOR='mvim -v'
+export LC_ALL=en_US.UTF-8

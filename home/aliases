@@ -17,3 +17,9 @@ touchp(){ mkdir -p $(dirname ${1}); touch $1 }
 erltest() { erlc $1.erl && erlc -DTEST $1_tests.erl && erl -noshell -pa . -eval "eunit:test($1_tests, [verbose])" -s init stop }
 
 npm-do() { (PATH=$(npm bin):$PATH; eval $@;) }
+
+export_secrets() {
+  op get item $1 | jq '.details.sections[].fields // [] | .[] | select(.k == "concealed") | "export \(.t)=\(.v)"' --raw-output
+}
+
+alias vim="mvim -v"

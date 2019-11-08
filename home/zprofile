@@ -1,13 +1,13 @@
-#defaults write NSGlobalDomain KeyRepeat -int 1
-#defaults write NSGlobalDomain InitialKeyRepeat -int 15
-PATH=/home/bamorim/.gem/ruby/2.3.0/bin:$PATH
-PATH=/usr/local/bin:/usr/bin:/bin:/home/bamorim/bin:/home/bamorim/bin/scripts:$PATH
-PATH="/usr/local/heroku/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
-export PATH
+BINDIR=$HOME/bin
 
+export E=/Volumes/Extension
+export EHOME=$E$HOME
+
+PATH=$HOME/.local/bin:$PATH
+PATH=$BINDIR:$BINDIR/scripts:$PATH
+PATH=/usr/local/heroku/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.dotnet/tools:$PATH
 export GOPATH=~/go
-
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-eval "$(direnv hook zsh)"
-#eval $(keychain --eval --quiet)
+PATH=$GOPATH/bin:$PATH
+export PATH
