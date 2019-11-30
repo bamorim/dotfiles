@@ -3,3 +3,4 @@ export EDITOR='mvim -v'
 export E=/Volumes/Extension
 export EHOME=$E$HOME
 . $HOME/.iterm2_shell_integration.zsh
+. <(plz --completion_script)
