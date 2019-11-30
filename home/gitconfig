@@ -1,7 +1,7 @@
 [core]
 	excludesfile = /Users/bamorim/.gitignore_global
 	autocrlf = input
-	editor = mvim -fv
+	editor = vim
 	ignorecase = false
 [user]
 	email = contato@bamorim.com

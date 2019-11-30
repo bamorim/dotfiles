@@ -4,12 +4,24 @@ DEFAULT_USER=`whoami`
 COMPLETION_WAITING_DOTS="true"
 plugins=(z dotenv)
 
+BINDIR=$HOME/bin
+
+PATH=$HOME/.local/bin:$PATH
+PATH=$BINDIR:$BINDIR/scripts:$PATH
+PATH=/usr/local/heroku/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.dotnet/tools:$PATH
+GOPATH=~/go
+PATH=$GOPATH/bin:$PATH
+
+export GOPATH
+export PATH
+
 . $ZSH/oh-my-zsh.sh
 . $HOME/.aliases
-. $HOME/.iterm2_shell_integration.zsh
+. $HOME/.distro
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+. <(plz --completion_script)
 eval $(thefuck --alias)
-source <(plz --completion_script)
-export EDITOR='mvim -v'
 export LC_ALL=en_US.UTF-8

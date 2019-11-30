@@ -2,6 +2,7 @@
 HOME=~
 
 BASEPATH=$HOME/.dotfiles
+DISTRO=$(uname -s)
 
 # -i makes the ln to be interactive, asking on replacing a link.
 iarg="-i"
@@ -14,21 +15,16 @@ do
 done
 
 # Link home scripts (i.e. ~/.vimrc)
-
-# Infer HOMEDOTFILES from this script path
-HOMEDOTFILES=$BASEPATH/home
-for f in $HOMEDOTFILES/*; do
+for f in $BASEPATH/home/*; do
   NAME=$(basename $f)
   echo "Linking home/$NAME to $HOME/.$NAME"
   ln -sf $iarg $f $HOME/.$NAME
 done
 
-# Link config to ./config
-CONFIGPATH=$BASEPATH/config
-for f in $CONFIGPATH/*; do
+for f in $BASEPATH/$DISTRO/home/*; do
   NAME=$(basename $f)
-  echo "Linking config/$NAME to $HOME/.config/$NAME"
-  ln -sf $iarg $f $HOME/.config/$NAME
+  echo "Linking $DISTRO/home/$NAME to $HOME/.$NAME"
+  ln -sf $iarg $f $HOME/.$NAME
 done
 
 # Link scripts to ~/bin/scripts
