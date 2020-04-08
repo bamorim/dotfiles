@@ -21,3 +21,10 @@ npm-do() { (PATH=$(npm bin):$PATH; eval $@;) }
 export_secrets() {
   op get item $1 | jq '.details.sections[].fields // [] | .[] | select(.k == "concealed") | "export \(.t)=\(.v)"' --raw-output
 }
+
+warn() {
+  RED='\033[0;31m'
+  NC='\033[0m'
+
+  echo -e "${RED}Warning: ${@}${NC}"
+}
