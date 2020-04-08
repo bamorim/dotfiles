@@ -2,5 +2,5 @@ alias vim="mvim -v"
 export EDITOR='mvim -v'
 export E=/Volumes/Extension
 export EHOME=$E$HOME
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl)"
 . $HOME/.iterm2_shell_integration.zsh
-. <(plz --completion_script)
