@@ -1,0 +1,5 @@
+brew "kubectl"
+brew "kubectx"
+brew "glow"
+brew "httpie"
+brew "thefuck"

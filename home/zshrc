@@ -69,11 +69,3 @@ if which kubectl >/dev/null; then
 else
   warn "Could not find kubectl"
 fi
-
-# GCloud SDK
-if test -d "$HOME/google-cloud-sdk"; then
-  . $HOME/google-cloud-sdk/path.zsh.inc
-  . $HOME/google-cloud-sdk/completion.zsh.inc
-else
-  warn "Could not find gcloud"
-fi
