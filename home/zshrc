@@ -69,3 +69,13 @@ if which kubectl >/dev/null; then
 else
   warn "Could not find kubectl"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/bamorim/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bamorim/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/home/bamorim/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bamorim/google-cloud-sdk/completion.zsh.inc'; fi
+
+if which direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi

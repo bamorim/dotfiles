@@ -70,6 +70,7 @@ snap install telegram-desktop
 snap install thunderbird
 snap install slack
 snap install discord
+snap install spotify
 
 # Set zsh as default shell
 echo "Input your password to change shell to zsh"

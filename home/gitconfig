@@ -10,7 +10,6 @@
 	default = simple
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  publish = "!sh -c 'git checkout $1; git merge @{-1} --no-ff --no-edit; git push $1 $1:master; git checkout @{-1}' -"
 	next = !git checkout `git rev-list HEAD..demo-end | tail -1`
 	prev = checkout HEAD^
 	peek-next = !git log -1 --pretty=format:%s `git rev-list HEAD..demo-end | tail -1` | cat
@@ -21,3 +20,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[includeIf "gitdir:~/Work/Toptal/"]
+	path = ~/Work/Toptal/.gitconfig
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
