@@ -28,3 +28,8 @@ warn() {
 
   echo -e "${YELLOW}Warning: ${@}${NC}"
 }
+
+icat() { kitty +kitten icat $@ }
+
+docker-login-aws() { eval $(aws ecr get-login --no-include-email) }
+docker-login-github() { cat ~/.github-token | docker login https://docker.pkg.github.com -u bamorim --password-stdin }
