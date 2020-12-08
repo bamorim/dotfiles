@@ -1,0 +1,82 @@
+#############
+### Setup ###
+#############
+
+# Load Oh My Zsh
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="robbyrussell"
+DEFAULT_USER=`whoami`
+COMPLETION_WAITING_DOTS="true"
+plugins=(z dotenv)
+. $ZSH/oh-my-zsh.sh
+
+# Load aliases
+. $HOME/.aliases
+
+export LC_ALL=en_US.UTF-8
+
+############
+### PATH ###
+############
+
+# My binaries and scripts
+BINDIR=$HOME/bin
+PATH=$BINDIR:$BINDIR/scripts:$PATH
+
+# Rust
+PATH=$HOME/.cargo/bin:$PATH
+
+# .NET
+PATH=$HOME/.dotnet/tools:$PATH
+
+# GO
+export GOPATH=~/go
+PATH=$GOPATH/bin:$PATH
+
+# Pulumi
+PATH=$PATH:$HOME/.pulumi/bin
+
+export PATH
+
+#######################
+### Distro Override ###
+#######################
+
+. $HOME/.distro
+
+###################
+### Third Party ###
+###################
+
+# ASDF
+export KERL_BUILD_DOCS=true
+if test -d "$HOME/.asdf"; then
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
+else
+  warn "Could not find ASDF"
+fi
+
+# thefuck
+if which thefuck >/dev/null; then
+  eval $(thefuck --alias)
+else
+  warn "Could not find thefuck"
+fi
+
+# Kubernetes
+if which kubectl >/dev/null; then
+  source <(kubectl completion zsh)
+else
+  warn "Could not find kubectl"
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/bamorim/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bamorim/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/home/bamorim/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bamorim/google-cloud-sdk/completion.zsh.inc'; fi
+
+if which direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi

@@ -1,0 +1,11 @@
+bamorim@Mapple.*
+.envrc
+**/*.swp
+.idea/*
+.idea/
+**/.DS_Store
+.vs/
+.vscode
+.elixirls/
+.elixir_ls/
+.ionide/
