@@ -27,6 +27,13 @@ for f in $BASEPATH/$DISTRO/home/*; do
   ln -sf $iarg $f $HOME/.$NAME
 done
 
+# Link config to ./config
+for f in $BASEPATH/config/*; do
+  NAME=$(basename $f)
+  echo "Linking config/$NAME to $HOME/.config/$NAME"
+  ln -sf $iarg $f $HOME/.config/$NAME
+done
+
 # Link scripts to ~/bin/scripts
 echo "Creating $HOME/bin if it doesn't exist yet"
 mkdir -p $HOME/bin
