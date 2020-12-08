@@ -1,0 +1,4 @@
+#!/bin/env sh
+
+echo {{ (onepassword "ur647w55wx2o4pf3fx7d2z4ada").details.password }} | docker login https://docker.pkg.github.com -u bamorim --password-stdin
+echo {{ (onepassword "ur647w55wx2o4pf3fx7d2z4ada").details.password }} | docker login https://ghcr.io -u bamorim --password-stdin

@@ -1,0 +1,6 @@
+machine api.heroku.com
+    login {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").username.value }}
+    password {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").password.value }}
+machine git.heroku.com
+    login {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").username.value }}
+    password {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").password.value }}
