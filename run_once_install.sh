@@ -8,14 +8,15 @@ PACKAGES=(
   bat
   curl
   dbeaver
-  direnv
   discord
+  docker
   docker-compose
   fd
   firefox
   gimp
   gist
   git
+  github-cli
   glu # Erlang wxWidgets
   gnupg
   handbrake
@@ -54,7 +55,37 @@ PACKAGES=(
   zsh
 )
 
-sudo pacman -Syy
-sudo pacman -S --needed "${PACKAGES[@]}"
+AUR_PACKAGES=(
+  1password-cli
+  act
+  beekeeper-studio-appimage
+  direnv
+  dust-bin
+  gnome-shell-extension-appindicator-git
+  gnome-shell-extension-arch-update
+  gnome-shell-extension-gsconnect
+  gnome-shell-extension-openweather-git
+  gnome-shell-extension-pop-shell-git
+  gnome-shell-extension-system-monitor-git
+  google-chrome
+  google-cloud-sdk
+  green-recorder
+  heroku-cli
+  jetbrains-toolbox
+  logiops-git
+  obinskit
+  procs-bin
+  pulumi-bin
+  slack-desktop
+  spotify
+  sshping
+  tealdeer
+  ttf-twemoji
+  visual-studio-code-bin
+  ytop-bin
+  zoom
+)
 
-[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+yay -Syy
+yay -S --needed "${PACKAGES[@]}"
+yay -S --needed "${AUR_PACKAGES[@]}"
