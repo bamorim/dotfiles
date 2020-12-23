@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "[typescriptreact]": {
@@ -17,6 +17,9 @@
     "workbench.activityBar.visible": true,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[sass]": {
+        "editor.colorDecorators": false
     },
     "FSharp.useSdkScripts": true
 }

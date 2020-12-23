@@ -20,6 +20,7 @@ EXTENSIONS=(
   golang.go
   henoc.svgeditor
   humao.rest-client
+  Ionide.Ionide-fsharp
   JakeBecker.elixir-ls
   joaompinto.vscode-graphviz
   johnpapa.vscode-peacock
@@ -29,6 +30,7 @@ EXTENSIONS=(
   marcelovelasquez.flutter-tree
   marp-team.marp-vscode
   mikestead.dotenv
+  mrmlnc.vscode-scss
   ms-azuretools.vscode-docker
   ms-dotnettools.csharp
   ms-kubernetes-tools.vscode-kubernetes-tools
@@ -54,6 +56,7 @@ EXTENSIONS=(
   silvenon.mdx
   sleistner.vscode-fileutils
   stkb.rewrap
+  syler.sass-indented
   tchayen.markdown-links
   tintinweb.graphviz-interactive-preview
   tootone.org-mode
