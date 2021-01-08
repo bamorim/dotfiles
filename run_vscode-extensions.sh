@@ -8,16 +8,19 @@ EXTENSIONS=(
   bungcip.better-toml
   cssho.vscode-svgviewer
   danhuynhdev.sorbet-lsp
+  dbaeumer.vscode-eslint
   eamodio.gitlens
   Equinusocio.vsc-community-material-theme
   Equinusocio.vsc-material-theme
   equinusocio.vsc-material-theme-icons
   esbenp.prettier-vscode
   faustinoaq.crystal-lang
+  fernandoescolar.vscode-solution-explorer
   firefox-devtools.vscode-firefox-debug
   foam.foam-vscode
   GitHub.vscode-pull-request-github
   golang.go
+  GraphQL.vscode-graphql
   henoc.svgeditor
   humao.rest-client
   Ionide.Ionide-fsharp
@@ -26,6 +29,7 @@ EXTENSIONS=(
   johnpapa.vscode-peacock
   karigari.chat
   kortina.vscode-markdown-notes
+  leo-labs.dotnet
   letmaik.git-tree-compare
   marcelovelasquez.flutter-tree
   marp-team.marp-vscode
@@ -48,6 +52,7 @@ EXTENSIONS=(
   philipbe.theme-gray-matter
   PKief.material-icon-theme
   Prisma.prisma
+  rebornix.ruby
   redhat.vscode-yaml
   ricard.postcss
   rust-lang.rust
@@ -60,6 +65,7 @@ EXTENSIONS=(
   tchayen.markdown-links
   tintinweb.graphviz-interactive-preview
   tootone.org-mode
+  ultram4rine.vscode-choosealicense
   wingrunr21.vscode-ruby
   wmaurer.change-case
   xyc.vscode-mdx-preview
