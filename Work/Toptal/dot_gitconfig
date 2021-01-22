@@ -1,5 +1,0 @@
-[user]
-	email = bernardo@toptal.com
-	name = Bernardo Amorim
-[core]
-	excludesfile = ~/Work/Toptal/.gitignore_global
