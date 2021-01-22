@@ -24,3 +24,5 @@
 	rebase = true
 [rebase]
 	autosquash = true
+[init]
+	defaultBranch = main
