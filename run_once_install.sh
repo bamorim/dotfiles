@@ -11,6 +11,7 @@ PACKAGES=(
   discord
   docker
   docker-compose
+  evince
   fd
   firefox
   gimp
@@ -21,9 +22,11 @@ PACKAGES=(
   gnupg
   handbrake
   htop
+  httpie
   hyperfine
   inkscape
   inotify-tools
+  jdk-openjdk
   jre-openjdk
   kdenlive
   kitty
@@ -32,6 +35,7 @@ PACKAGES=(
   kubectx
   libpng # Erlang wxWidgets
   mesa # Erlang wxWidgets
+  mpv # Lightweight video player
   neofetch
   pinta
   postgresql
@@ -40,7 +44,10 @@ PACKAGES=(
   rustup
   shellcheck
   solaar
+  streamlink
+  swaks # CLI for testing SMTP servers
   telegram-desktop
+  texlive-most
   thefuck
   tmux
   tokei
@@ -59,6 +66,7 @@ AUR_PACKAGES=(
   1password-cli
   act
   beekeeper-studio-appimage
+  chatterino
   direnv
   dust-bin
   gnome-shell-extension-appindicator-git
@@ -71,15 +79,21 @@ AUR_PACKAGES=(
   google-cloud-sdk
   green-recorder
   heroku-cli
+  insomnia
   jetbrains-toolbox
+  kind # Local kubernetes running in docker
   logiops-git
+  ngrok
   obinskit
+  obs-studio-browser
   procs-bin
   pulumi-bin
   slack-desktop
   spotify
   sshping
+  streamlink-twitch-gui
   tealdeer
+  texlive-latexindent-meta
   ttf-twemoji
   visual-studio-code-bin
   ytop-bin

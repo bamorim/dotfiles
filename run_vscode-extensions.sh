@@ -6,9 +6,11 @@ EXTENSIONS=(
   bibhasdn.unique-lines
   bradlc.vscode-tailwindcss
   bungcip.better-toml
+  CoenraadS.bracket-pair-colorizer-2
   cssho.vscode-svgviewer
   danhuynhdev.sorbet-lsp
   dbaeumer.vscode-eslint
+  dkundel.vscode-new-file
   eamodio.gitlens
   Equinusocio.vsc-community-material-theme
   Equinusocio.vsc-material-theme
@@ -23,8 +25,10 @@ EXTENSIONS=(
   GraphQL.vscode-graphql
   henoc.svgeditor
   humao.rest-client
+  Ionide.Ionide-FAKE
   Ionide.Ionide-fsharp
   JakeBecker.elixir-ls
+  James-Yu.latex-workshop
   joaompinto.vscode-graphviz
   johnpapa.vscode-peacock
   karigari.chat
