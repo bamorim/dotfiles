@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 1,
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "[typescriptreact]": {
@@ -22,5 +21,15 @@
         "editor.colorDecorators": false
     },
     "FSharp.useSdkScripts": true,
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "liveshare.authenticationProvider": "GitHub",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

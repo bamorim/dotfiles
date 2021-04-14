@@ -1,0 +1,12 @@
+#!/bin/env sh
+function login() {
+  PULUMI_ACCESS_TOKEN=$1 pulumi login
+}
+
+function login_for() {
+  PULUMI_HOME="$HOME/.pulumi-$1" login $2
+}
+
+login {{ (onepassword "tmqlgotrl6aanzjga5i5oqagz4").details.password }}
+login_for octos {{ (onepassword "vp4hh3gjwebnghzsfan4mvvjwu").details.password }}
+login_for salt {{ (onepassword "5fc3qc4ujqmg5jwk7resr4ee3m").details.password }}
