@@ -1,25 +1,8 @@
-gi() { curl "https://www.gitignore.io/api/$@"; }
-
 lsr() {
   ls -aR $1 | awk '
   /:$/&&f{s=$0;f=0}
   /:$/&&!f{sub(/:$/,"");s=$0;f=1;next}
   NF&&f{ print s"/"$0 }' | grep "[^\\.]$" --color=never
-}
-
-rmswp(){ for f in $(lsr | grep swp); do; echo "Removing $f"; rm -i $1 $f; done }
-
-sv(){sh -c $1 > /var/transfer}
-re(){cat /var/transfer}
-
-touchp(){ mkdir -p $(dirname ${1}); touch $1 }
-
-erltest() { erlc $1.erl && erlc -DTEST $1_tests.erl && erl -noshell -pa . -eval "eunit:test($1_tests, [verbose])" -s init stop }
-
-npm-do() { (PATH=$(npm bin):$PATH; eval $@;) }
-
-export_secrets() {
-  op get item $1 | jq '.details.sections[].fields // [] | .[] | select(.k == "concealed") | "export \(.t)=\(.v)"' --raw-output
 }
 
 warn() {
@@ -30,6 +13,3 @@ warn() {
 }
 
 icat() { kitty +kitten icat $@ }
-
-docker-login-aws() { eval $(aws ecr get-login --no-include-email) }
-docker-login-github() { cat ~/.github-token | docker login https://docker.pkg.github.com -u bamorim --password-stdin }
