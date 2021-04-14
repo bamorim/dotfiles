@@ -1,12 +1,15 @@
-#############
-### Setup ###
-#############
-
 # Load Oh My Zsh
 ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER=`whoami`
 COMPLETION_WAITING_DOTS="true"
-plugins=(z thefuck asdf direnv)
+plugins=(
+  asdf
+  direnv
+  git-auto-fetch
+  gitignore
+  thefuck
+  z
+)
 . $ZSH/oh-my-zsh.sh
 
 # Aliases
