@@ -40,9 +40,6 @@ PATH=$HOME/.dotnet/tools:$PATH
 export GOPATH=~/go
 PATH=$GOPATH/bin:$PATH
 
-# Pulumi
-PATH=$PATH:$HOME/.pulumi/bin
-
 export PATH
 
 # Kubernetes
