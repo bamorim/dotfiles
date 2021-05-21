@@ -31,5 +31,15 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "json.schemas": [
+        {
+            "name": "vscode-expo-manifest",
+            "url": "file:///home/bamorim/.config/Code/User/globalStorage/bycedric.vscode-expo/manifest-41.0.0.json",
+            "fileMatch": [
+                "app.json",
+                "app.config.json"
+            ]
+        }
+    ]
 }

@@ -12,7 +12,6 @@ AUR_PACKAGES=(
   gnome-shell-extension-appindicator-git
   gnome-shell-extension-arch-update
   gnome-shell-extension-gsconnect
-  gnome-shell-extension-openweather-git
   gnome-shell-extension-pop-shell
   gnome-shell-extension-system-monitor-git
   google-chrome

@@ -1,0 +1,8 @@
+[gcloud]
+disabled = true
+
+[kubernetes]
+disabled = false
+
+[time]
+disabled = false
