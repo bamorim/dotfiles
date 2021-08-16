@@ -1,4 +1,4 @@
 github.com:
-    oauth_token: {{ (onepassword "ur647w55wx2o4pf3fx7d2z4ada").details.password }}
+    oauth_token: {{ .github.token }}
     git_protocol: ssh
-    user: bamorim
+    user: {{ .github.username }}

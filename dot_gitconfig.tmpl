@@ -5,8 +5,9 @@
 	ignorecase = false
 
 [user]
-	email = contato@bamorim.com
+	email = {{ .git.email }}
 	name = Bernardo Amorim
+	signingkey = {{ .git.signing_key }}
 
 [push]
 	default = simple
