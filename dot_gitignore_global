@@ -9,3 +9,4 @@ bamorim@Mapple.*
 .elixirls/
 .elixir_ls/
 .ionide/
+*.iml

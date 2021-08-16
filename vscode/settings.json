@@ -35,11 +35,90 @@
     "json.schemas": [
         {
             "name": "vscode-expo-manifest",
-            "url": "file:///home/bamorim/.config/Code/User/globalStorage/bycedric.vscode-expo/manifest-41.0.0.json",
+            "url": "file:///home/bamorim/.config/Code/User/globalStorage/bycedric.vscode-expo/manifest-42.0.0.json",
             "fileMatch": [
                 "app.json",
                 "app.config.json"
             ]
         }
-    ]
+    ],
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:8080",
+    "[dockercompose]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "terminal.integrated.tabs.enabled": true,
+    "[crystal]": {
+        "editor.defaultFormatter": "crystal-lang-tools.crystal-lang"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "yaml.customTags": [
+        "!encrypted/pkcs1-oaep scalar",
+        "!vault scalar"
+    ],
+    "jsonnet.libPaths": [
+        "/home/bamorim/Work/Salt/salt-id/k8s/vendor",
+        "/home/bamorim/Work/Salt/salt-id/k8s/lib"
+    ],
+    "[jsonnet]": {
+        "editor.defaultFormatter": "Sebbia.jsonnetng"
+    },
+    "peacock.favoriteColors": [
+        {
+            "name": "Elixir Purple",
+            "value": "#4e2a8e"
+        },
+        {
+            "name": "Erlang Red",
+            "value": "#a90533"
+        },
+        {
+            "name": "Angular Red",
+            "value": "#dd0531"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#61dafb"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Svelte Orange",
+            "value": "#ff3d00"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "workbench.colorTheme": "One Dark Pro",
+    "materialTheme.accent": "Teal",
+    "workbench.iconTheme": "material-icon-theme",
+    "powermode.enabled": false,
+    "window.zoomLevel": 1,
+    "elixirLS.enableTestLenses": true
 }

@@ -16,7 +16,6 @@ EXTENSIONS=(
   Equinusocio.vsc-material-theme
   equinusocio.vsc-material-theme-icons
   esbenp.prettier-vscode
-  faustinoaq.crystal-lang
   fernandoescolar.vscode-solution-explorer
   firefox-devtools.vscode-firefox-debug
   foam.foam-vscode

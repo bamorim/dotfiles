@@ -13,3 +13,5 @@ warn() {
 }
 
 icat() { kitty +kitten icat $@ }
+
+alias task=gtask

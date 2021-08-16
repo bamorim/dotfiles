@@ -3,26 +3,51 @@
 	autocrlf = input
 	editor = vim
 	ignorecase = false
+
 [user]
 	email = contato@bamorim.com
 	name = Bernardo Amorim
+
 [push]
 	default = simple
+
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	next = !git checkout `git rev-list HEAD..demo-end | tail -1`
 	prev = checkout HEAD^
 	peek-next = !git log -1 --pretty=format:%s `git rev-list HEAD..demo-end | tail -1` | cat
-	peek-next-diff = !git diff `git rev-list HEAD..demo-end | tail -1`
+	diff-next = !git diff HEAD `git rev-list HEAD..demo-end | tail -1`
 	next-force = !git add . && git reset --hard && git next
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [pull]
 	rebase = true
+
 [rebase]
 	autosquash = true
+
 [init]
 	defaultBranch = main
+
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+
+[delta]
+	features = decorations
+
+[delta "interactive"]
+	keep-plus-minus-markers = false
+
+[includeIf "gitdir:~/Work/Salt/"]
+	path = ~/Work/Salt/.gitconfig
