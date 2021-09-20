@@ -49,4 +49,6 @@ else
   warn "Could not find kubectl"
 fi
 
+export GPG_TTY=$(tty)
+
 eval "$(starship init zsh)"
