@@ -119,6 +119,12 @@
     "materialTheme.accent": "Teal",
     "workbench.iconTheme": "material-icon-theme",
     "powermode.enabled": false,
-    "window.zoomLevel": 1,
-    "elixirLS.enableTestLenses": true
+    "elixirLS.enableTestLenses": true,
+    "go-template.languages": [
+        "toml"
+    ],
+    "[html-eex]": {
+        "editor.defaultFormatter": "JakeBecker.elixir-ls"
+    },
+    "window.zoomLevel": 1
 }
