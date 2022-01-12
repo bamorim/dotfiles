@@ -1,0 +1,78 @@
+[colors]
+background = #303030
+background-alt = #303030
+background-alt-2 = #5fafcf
+foreground = #eeeeee
+foreground-alt = #c1c2c3
+
+red = #fb4934
+green = #b8bb26
+yellow = #fabd2f
+blue = #83a598
+purple = #d3869b
+aqua = #8ec07c
+orange = #fe8019
+white = #dddddd
+
+blue_arch = #83afe1
+
+grey = #5b51c9
+grey1 = #5bb1c9
+grey2 = #5bf1c9
+
+primary = green
+secondary = blue
+alert = red
+
+[bar/default]
+width = 100%
+height = 24
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background-alt}
+foreground = ${colors.foreground}
+
+overline-size = 0
+underline-size = 0
+
+border-bottom-size = 0
+border-bottom-color = #ffffff
+
+padding-left = 0
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = DejaVuSans:fontformat=truetype:size=10:antialias=true;1
+font-1 = JoyPixels:size=1:scale=12:anialias=true;1
+
+radius = 0.0
+fixed-center = false
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+modules-left = xmonad
+modules-right = date
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = "📅 %Y-%m-%d "
+
+time = "🕒 %H:%M"
+time-alt = "🕒 %H:%M"
+
+label = %date% %time%
+
+[module/xmonad]
+type = custom/script
+exec = xmonad-log
+
+tail = true
