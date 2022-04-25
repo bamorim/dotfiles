@@ -15,3 +15,7 @@ warn() {
 icat() { kitty +kitten icat $@ }
 
 alias task=gtask
+
+aws-shell() {
+  aws-vault exec $(aws-vault list --profiles | fzf) -- zsh
+}

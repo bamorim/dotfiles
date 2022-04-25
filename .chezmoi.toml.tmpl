@@ -29,9 +29,3 @@
 
 [data.ngrok]
   token = {{ (onepassword "dr4s4kl3vwiiky7lbzg3sm46om").details.password | quote }}
-
-[data.aws]
-  octos.access_key_id = {{ (onepasswordDetailsFields "eut5x4omyjeskksfcnf2vvabey").username.value | quote }}
-  octos.secret_access_key = {{ (onepasswordDetailsFields "eut5x4omyjeskksfcnf2vvabey").password.value | quote }}
-  salt.access_key_id = {{ (onepasswordDetailsFields "luvndytyy6f27vigw7r4v6sd4q").username.value | quote }}
-  salt.secret_access_key = {{ (onepasswordDetailsFields "luvndytyy6f27vigw7r4v6sd4q").password.value | quote }}
