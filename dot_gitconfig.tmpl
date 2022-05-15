@@ -7,7 +7,6 @@
 [user]
 	email = {{ .git.email }}
 	name = Bernardo Amorim
-	signingkey = {{ .git.signing_key }}
 
 [push]
 	default = simple
@@ -35,20 +34,8 @@
 [init]
 	defaultBranch = main
 
-[pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
-
-[interactive]
-	diffFilter = delta --color-only --features=interactive
-
-[delta]
-	features = decorations
-
-[delta "interactive"]
-	keep-plus-minus-markers = false
+[include]
+	path = ~/.gitconfig-host
 
 [includeIf "gitdir:~/Work/Salt/"]
 	path = ~/Work/Salt/.gitconfig
