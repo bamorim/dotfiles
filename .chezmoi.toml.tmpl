@@ -10,22 +10,19 @@
 
 [data.github]
   username = "bamorim"
-  token = {{ (onepassword "ur647w55wx2o4pf3fx7d2z4ada").details.password | quote }}
+  token = {{ (onepasswordDetailsFields "ur647w55wx2o4pf3fx7d2z4ada").password.value | quote }}
 
 [data.git]
   email = "contato@bamorim.com"
   signing_key = {{ template "gpg_key" "contato@bamorim.com" }}
-  salt.email = "bernardo.amorim@saltpay.co"
-  salt.signing_key = {{ template "gpg_key" "bernardo.amorim@saltpay.co" }}
 
 [data.heroku]
   username = {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").username.value | quote }}
   password = {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").password.value | quote }}
 
 [data.pulumi]
-  token = {{ (onepassword "tmqlgotrl6aanzjga5i5oqagz4").details.password | quote }}
-  octos.token = {{ (onepassword "vp4hh3gjwebnghzsfan4mvvjwu").details.password | quote }}
-  salt.token = {{ (onepassword "5fc3qc4ujqmg5jwk7resr4ee3m").details.password | quote }}
+  token = {{ (onepasswordDetailsFields "tmqlgotrl6aanzjga5i5oqagz4").password.value | quote }}
+  octos.token = {{ (onepasswordDetailsFields "vp4hh3gjwebnghzsfan4mvvjwu").password.value | quote }}
 
 [data.ngrok]
-  token = {{ (onepassword "dr4s4kl3vwiiky7lbzg3sm46om").details.password | quote }}
+  token = {{ (onepasswordDetailsFields "dr4s4kl3vwiiky7lbzg3sm46om").password.value | quote }}

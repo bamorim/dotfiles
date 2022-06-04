@@ -17,13 +17,6 @@ plugins=(
 
 export LC_ALL=en_US.UTF-8
 
-# Android
-export ANDROID_HOME=$HOME/Android/Sdk
-PATH=$PATH:$ANDROID_HOME/emulator
-PATH=$PATH:$ANDROID_HOME/tools
-PATH=$PATH:$ANDROID_HOME/tools/bin
-PATH=$PATH:$ANDROID_HOME/platform-tools
-
 # Erlang
 export KERL_BUILD_DOCS=true
 
