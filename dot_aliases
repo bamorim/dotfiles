@@ -19,3 +19,11 @@ alias task=gtask
 aws-shell() {
   aws-vault exec $(aws-vault list --profiles | fzf) -- zsh
 }
+
+power-to-slab() {
+  sudo chown -R 100:101 lib test priv
+}
+
+power-to-me() {
+  sudo chown -R bamorim:bamorim lib test priv
+}
