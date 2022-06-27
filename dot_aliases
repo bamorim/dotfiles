@@ -20,10 +20,12 @@ aws-shell() {
   aws-vault exec $(aws-vault list --profiles | fzf) -- zsh
 }
 
+FILES=(lib test priv assets config graphql bin terraform/modules webpack.config.js .credo.exs .formatter.exs)
+
 power-to-slab() {
-  sudo chown -R 100:101 lib test priv
+  sudo chown -R 100:101 $FILES
 }
 
 power-to-me() {
-  sudo chown -R bamorim:bamorim lib test priv
+  sudo chown -R bamorim:bamorim $FILES
 }
