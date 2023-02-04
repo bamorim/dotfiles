@@ -20,9 +20,5 @@
   username = {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").username.value | quote }}
   password = {{ (onepasswordDetailsFields "ug2d3ssijhy353ajrffwx2lwei").password.value | quote }}
 
-[data.pulumi]
-  token = {{ (onepasswordDetailsFields "tmqlgotrl6aanzjga5i5oqagz4").password.value | quote }}
-  octos.token = {{ (onepasswordDetailsFields "vp4hh3gjwebnghzsfan4mvvjwu").password.value | quote }}
-
 [data.ngrok]
   token = {{ (onepasswordDetailsFields "dr4s4kl3vwiiky7lbzg3sm46om").password.value | quote }}

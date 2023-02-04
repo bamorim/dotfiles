@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-echo {{ .github.token }} | docker login https://docker.pkg.github.com -u {{ .github.username }} --password-stdin
-echo {{ .github.token }} | docker login https://ghcr.io -u {{ .github.username }} --password-stdin

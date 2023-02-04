@@ -19,19 +19,3 @@ alias task=gtask
 aws-shell() {
   aws-vault exec $(aws-vault list --profiles | fzf) -- zsh
 }
-
-FILES=(lib test priv assets config graphql bin terraform/modules webpack.config.js .credo.exs .formatter.exs)
-
-power-to-slab() {
-  sudo chown -R 100:101 $FILES
-}
-
-power-to-me() {
-  sudo chown -R bamorim:bamorim $FILES
-}
-
-ngrok(){
-  NGROK_CONFIG_FILE="${NGROK_CONFIG_FILE:-$HOME/.ngrok2/ngrok.yml}"
-  echo $NGROK_CONFIG_FILE
-  command ngrok "$@" --config=$NGROK_CONFIG_FILE
-}
