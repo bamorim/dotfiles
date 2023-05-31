@@ -9,3 +9,4 @@
 .elixir_ls/
 .ionide/
 *.iml
+.iex.exs
