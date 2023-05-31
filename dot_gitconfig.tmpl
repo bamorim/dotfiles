@@ -7,6 +7,16 @@
 [user]
 	email = {{ .git.email }}
 	name = Bernardo Amorim
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAf0pvlKyMSK4mjAO3UqCeZAJyijaj2djvOzqKQQf5AS
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
 
 [push]
 	default = simple
